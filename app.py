@@ -13,15 +13,18 @@ def fortune():
     stream = os.popen('fortune')
     output = "<pre>" + stream.read() + "</pre>"
     return output
-    # Code that executes the fortune command goes here.
-    # Capture its output and return the output surrounded by the# strings "<pre>" and "</pre>".
 
 @app.route('/cowsay/<message>/')
 def cowsay(message):
     stream = os.popen('cowsay ' + str(message))
     output =  "<pre>" + stream.read() + "</pre>"
     return output
-    # Code goes here.
+
+@app.route('/cowfortune/')
+def cowfortune():
+    stream = os.popen('fortune | cowsay')
+    output = "<pre>" + stream.read() + "</pre>"
+    return output
 
 @app.route('/cmd/<command>/')
 def cmd(command):

@@ -24,7 +24,7 @@ def test_fortune(app, client):
 
 
 def test_cowfortune(app, client):
-    res= client.get('/fortune/')
+    res= client.get('/cowfortune/')
     assert res.status_code == 200
     page_output =res.get_data(as_text=True)
     assert '<pre>' in page_output
