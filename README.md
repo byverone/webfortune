@@ -52,3 +52,5 @@ pytests is ran as a github action
 if manual testing wanted:
 
 pytest tests.py
+
+![Pytests](https://github.com/byverone/webfortune/actions/workflows/python-app.yml/badge.svg)
